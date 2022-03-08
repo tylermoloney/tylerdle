@@ -1,15 +1,15 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+<div>
+  <tylerdle-main />
+</div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import TylerdleMain from './components/TylerdleMain.vue'
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    TylerdleMain
   }
 }
 </script>
@@ -20,7 +20,9 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  background-color: #121213;
   margin-top: 60px;
+  font-size: 32px;
+  
 }
 </style>
