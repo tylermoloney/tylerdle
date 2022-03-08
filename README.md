@@ -1,6 +1,6 @@
 # tylerdle
 
-This is available online at https://www.tylerdle.netlify.app to try in your browser!
+This is available online at https://tylerdle.netlify.app to try in your browser!
 
 ## Project setup
 ```
