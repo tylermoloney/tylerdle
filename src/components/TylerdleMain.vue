@@ -1,7 +1,11 @@
 <template>
   <div id="board">
     <h1>Tylerdle</h1>
-    <p>Guess the word in 6 tries.</p> <p>A <span class="correct">green</span> letter is correct and in the correct position.</p> <p>A <span class="present">yellow</span> letter is in the word but not in that position.</p> <p>A <span class="absent">grey</span> letter is not in the word at all.</p> <p>This uses past solutions from <a href="https://www.nytimes.com/games/wordle/index.html" target=":blank">Wordle</a> so no worries about spoilers from future puzzles! </p>
+    <p>Guess the word in 6 tries.</p> 
+    <p>A <span class="correct">green</span> letter is correct and in the correct position.</p> 
+    <p>A <span class="present">yellow</span> letter is in the word but not in that position.</p> 
+    <p>A <span class="absent">grey</span> letter is not in the word at all.</p> 
+    <p>This uses past solutions from <a href="https://www.nytimes.com/games/wordle/index.html" target=":blank">Wordle</a> so no worries about spoilers from future puzzles!</p>
     <div class="row" id="row1">
       <div class="letter" id="11"></div>
       <div class="letter" id="12"></div>
@@ -286,17 +290,7 @@
         >
           M
         </button>
-        <button
-          v-on:mousedown="
-            this.playerWord = this.playerWord.substring(
-              0,
-              this.playerWord.length - 1
-            );
-            this.clearRow();
-            this.fillWord();
-          "
-          id="backspacekey"
-        >
+        <button v-on:mousedown="this.playerWord = this.playerWord.substring(0, this.playerWord.length - 1); this.clearRow(); this.fillWord();" id="backspacekey">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="24"
@@ -312,6 +306,11 @@
     </div>
     <div id="refresh" v-show="!gameActive">
       <p>Refresh this page to get a new puzzle!</p>
+    </div>
+    <div class="socials">
+      <a href="https://www.linkedin.com/in/tyler-moloney" target=":blank"><img src="https://cdn-icons-png.flaticon.com/512/61/61109.png" alt="LinkedIn Icon" class="socialicon"></a>
+      <a href="https://www.github.com/tylermoloney" target=":blank"><img src="https://cdn-icons.flaticon.com/png/512/3291/premium/3291695.png?token=exp=1646844216~hmac=bc3991c84132d7f895a7263223b29791" alt="github icon" class="socialicon"></a>
+      <p>By Tyler Moloney</p>
     </div>
   </div>
 </template>
@@ -517,6 +516,25 @@ export default {
 </script>
 
 <style>
+.socials{
+  background-color:blueviolet;
+  position: fixed;
+  border-top-left-radius: 20px;
+  bottom: 0;
+  right: 0;
+  width: 150px;
+  height: 75px;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+.socialicon{
+  width: 50px;
+  height: 50px;
+  padding: 5px;
+  
+}
 #board {
   display: flex;
   justify-content: center;
@@ -538,6 +556,7 @@ export default {
 
 button {
   width: 3rem;
+  
 }
 p{
   font-size: 1rem;
