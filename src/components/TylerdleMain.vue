@@ -495,7 +495,6 @@ export default {
     this.wordArray = "";
     this.guessCount = 1;
     window.addEventListener("keydown", (e) => {
-      console.log(e.key);
       if (e.key == "Enter") {
         this.submitWord();
         this.playerWord="";
