@@ -309,7 +309,7 @@
     </div>
     <div class="socials">
       <a href="https://www.linkedin.com/in/tyler-moloney" target=":blank"><img src="https://cdn-icons-png.flaticon.com/512/61/61109.png" alt="LinkedIn Icon" class="socialicon"></a>
-      <a href="https://www.github.com/tylermoloney" target=":blank"><img src="https://cdn-icons.flaticon.com/png/512/3291/premium/3291695.png?token=exp=1646844216~hmac=bc3991c84132d7f895a7263223b29791" alt="github icon" class="socialicon"></a>
+      <a href="https://www.github.com/tylermoloney" target=":blank"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="github icon" class="socialicon"></a>
       <p>By Tyler Moloney</p>
     </div>
   </div>
@@ -556,6 +556,7 @@ export default {
 
 button {
   width: 3rem;
+  border-radius: 5px;
   
 }
 p{
