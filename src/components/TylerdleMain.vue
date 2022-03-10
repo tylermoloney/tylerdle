@@ -291,15 +291,9 @@
           M
         </button>
         <button v-on:mousedown="this.playerWord = this.playerWord.substring(0, this.playerWord.length - 1); this.clearRow(); this.fillWord();" id="backspacekey">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            height="24"
-            viewBox="0 0 24 24"
-            width="24"
-          >
-            <path
-              d="M22 3H7c-.69 0-1.23.35-1.59.88L0 12l5.41 8.11c.36.53.9.89 1.59.89h15c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H7.07L2.4 12l4.66-7H22v14zm-11.59-2L14 13.41 17.59 17 19 15.59 15.41 12 19 8.41 17.59 7 14 10.59 10.41 7 9 8.41 12.59 12 9 15.59z"
-            ></path>
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+            <path d="M22 3H7c-.69 0-1.23.35-1.59.88L0 12l5.41 8.11c.36.53.9.89 1.59.89h15c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H7.07L2.4 12l4.66-7H22v14zm-11.59-2L14 13.41 17.59 17 19 15.59 15.41 12 19 8.41 17.59 7 14 10.59 10.41 7 9 8.41 12.59 12 9 15.59z">
+            </path>
           </svg>
         </button>
       </div>
@@ -360,7 +354,7 @@ export default {
   created() {
     this.allowedGuesses = require(`../assets/allowedguesses.json`);
     var potentialArray = require(`../assets/potentialPuzzles.json`);
-    this.puzzleWord = potentialArray[Math.floor(Math.random() * 264)];
+    this.puzzleWord = potentialArray[Math.floor(Math.random() * (potentialArray.length -1))];
     this.puzzleWord = this.puzzleWord.toUpperCase();
     this.puzzleArray = this.puzzleWord.split("");
     this.gameActive = true;
@@ -375,6 +369,7 @@ export default {
       }
     },
     fillWord() {
+      //put the player's word in the game board
       this.playerWord = this.playerWord.toUpperCase();
       this.wordArray = this.playerWord.split("");
       for (var i = 1; i <= this.wordArray.length; i++) {
@@ -402,24 +397,20 @@ export default {
       }
 
       //checks if a 5 letter string has been submitted
-      if (
-        this.wordArray.length != 5 ||
-        !this.allowedGuesses.includes(this.playerWord.toLowerCase())
-      ) {
+      if (this.wordArray.length != 5 || !this.allowedGuesses.includes(this.playerWord.toLowerCase())) {
         alert("Please enter a valid 5 letter word.");
         this.playerWord = "";
         this.clearRow();
       } else {
+
         //loop through the letters submitted by the user
         for (var i = 1; i <= this.wordArray.length; i++) {
+
           //identify the div based on the row(guess count) and position in the word
           var letterId = "" + this.guessCount + i;
-          // var rowId = "row" + this.guessCount;
           var documentId = document.getElementById(letterId);
-          // var rowDocument = document.getElementById(rowId);
-          var keyboardId = document.getElementById(
-            "" + this.wordArray[i - 1].toLowerCase() + "key"
-          );
+          var keyboardId = document.getElementById("" + this.wordArray[i - 1].toLowerCase() + "key");
+
 
           //set the row on the board to the word submitted
           documentId.innerText = this.wordArray[i - 1];
@@ -429,6 +420,8 @@ export default {
           if (this.wordArray[i - 1] == this.puzzleArray[i - 1].toUpperCase()) {
             documentId.classList.add("correct");
             keyboardId.classList.add("correct");
+
+            //check how many instances of that letter are in the map. If the letter appears only once, remove it from the map, else decrement its value in the map.
             var letterCount = this.letterMap.get(this.puzzleArray[i - 1]);
             if (letterCount == 1) {
               this.letterMap.delete(this.puzzleArray[i - 1]);
@@ -445,6 +438,7 @@ export default {
           keyboardId = document.getElementById(
             "" + this.wordArray[j - 1].toLowerCase() + "key"
           );
+
           //check if the letter exists in the word in another position
           if (
             this.wordArray[j - 1] != this.puzzleArray[j - 1].toUpperCase() &&
@@ -494,17 +488,18 @@ export default {
     this.playerWord = "";
     this.wordArray = "";
     this.guessCount = 1;
+
+    //event listeners for keystrokes
     window.addEventListener("keydown", (e) => {
       if (e.key == "Enter") {
         this.submitWord();
         this.playerWord="";
+
       } else if (e.key == "Backspace") {
-        this.playerWord = this.playerWord.substring(
-          0,
-          this.playerWord.length - 1
-        );
+        this.playerWord = this.playerWord.substring(0, this.playerWord.length - 1);
         this.clearRow();
         this.fillWord();
+
       } else if (this.alphabet.includes(e.key)) {
         this.playerWord += e.key;
         this.fillWord();
