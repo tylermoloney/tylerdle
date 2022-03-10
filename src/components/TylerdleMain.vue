@@ -280,7 +280,6 @@ export default {
       var letter = event.target.id.substring(0,1)
       this.playerWord += letter
       this.fillWord();
-      console.log(letter)
     },
     clearRow() {
       for (var i = 1; i <= 5; i++) {
