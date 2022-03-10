@@ -51,92 +51,55 @@
     <br />
     <div class="keyboard">
       <div class="keyboardrow">
-        <button
-          v-on:mousedown="
-            this.playerWord += 'q';
-            this.fillWord();
-          "
-          id="qkey"
-        >
+          <button v-on:mousedown="this.addLetter($event)" id="qkey">
           Q
         </button>
         <button
-          v-on:mousedown="
-            this.playerWord += 'w';
-            this.fillWord();
-          "
-          id="wkey"
-        >
+          v-on:mousedown="this.addLetter($event)" id="wkey">
           W
         </button>
         <button
-          v-on:mousedown="
-            this.playerWord += 'e';
-            this.fillWord();
-          "
-          id="ekey"
-        >
+          v-on:mousedown="this.addLetter($event)" id="ekey">
           E
         </button>
         <button
-          v-on:mousedown="
-            this.playerWord += 'r';
-            this.fillWord();
-          "
+          v-on:mousedown="this.addLetter($event)"
           id="rkey"
         >
           R
         </button>
         <button
-          v-on:mousedown="
-            this.playerWord += 't';
-            this.fillWord();
-          "
+          v-on:mousedown="this.addLetter($event)"
           id="tkey"
         >
           T
         </button>
         <button
-          v-on:mousedown="
-            this.playerWord += 'y';
-            this.fillWord();
-          "
+          v-on:mousedown="this.addLetter($event)"
           id="ykey"
         >
           Y
         </button>
         <button
-          v-on:mousedown="
-            this.playerWord += 'u';
-            this.fillWord();
-          "
+          v-on:mousedown="this.addLetter($event)"
           id="ukey"
         >
           U
         </button>
         <button
-          v-on:mousedown="
-            this.playerWord += 'i';
-            this.fillWord();
-          "
+          v-on:mousedown="this.addLetter($event)"
           id="ikey"
         >
           I
         </button>
         <button
-          v-on:mousedown="
-            this.playerWord += 'o';
-            this.fillWord();
-          "
+          v-on:mousedown="this.addLetter($event)"
           id="okey"
         >
           O
         </button>
         <button
-          v-on:mousedown="
-            this.playerWord += 'p';
-            this.fillWord();
-          "
+          v-on:mousedown="this.addLetter($event)"
           id="pkey"
         >
           P
@@ -144,82 +107,55 @@
       </div>
       <div class="keyboardrow">
         <button
-          v-on:mousedown="
-            this.playerWord += 'a';
-            this.fillWord();
-          "
+          v-on:mousedown="this.addLetter($event)"
           id="akey"
         >
           A
         </button>
         <button
-          v-on:mousedown="
-            this.playerWord += 's';
-            this.fillWord();
-          "
+          v-on:mousedown="this.addLetter($event)"
           id="skey"
         >
           S
         </button>
         <button
-          v-on:mousedown="
-            this.playerWord += 'd';
-            this.fillWord();
-          "
+          v-on:mousedown="this.addLetter($event)"
           id="dkey"
         >
           D
         </button>
         <button
-          v-on:mousedown="
-            this.playerWord += 'f';
-            this.fillWord();
-          "
+          v-on:mousedown="this.addLetter($event)"
           id="fkey"
         >
           F
         </button>
         <button
-          v-on:mousedown="
-            this.playerWord += 'g';
-            this.fillWord();
-          "
+          v-on:mousedown="this.addLetter($event)"
           id="gkey"
         >
           G
         </button>
         <button
-          v-on:mousedown="
-            this.playerWord += 'h';
-            this.fillWord();
-          "
+          v-on:mousedown="this.addLetter($event)"
           id="hkey"
         >
           H
         </button>
         <button
-          v-on:mousedown="
-            this.playerWord += 'j';
-            this.fillWord();
-          "
+          v-on:mousedown="this.addLetter($event)"
           id="jkey"
         >
           J
         </button>
         <button
-          v-on:mousedown="
-            this.playerWord += 'k';
-            this.fillWord();
-          "
+          v-on:mousedown="this.addLetter($event)"
           id="kkey"
         >
           K
         </button>
         <button
-          v-on:mousedown="
-            this.playerWord += 'l';
-            this.fillWord();
-          "
+          v-on:mousedown="this.addLetter($event)"
           id="lkey"
         >
           L
@@ -228,64 +164,43 @@
       <div class="keyboardrow">
         <button v-on:mousedown="this.submitWord()" id="enterkey">ENTER</button>
         <button
-          v-on:mousedown="
-            this.playerWord += 'z';
-            this.fillWord();
-          "
+          v-on:mousedown="this.addLetter($event)"
           id="zkey"
         >
           Z
         </button>
         <button
-          v-on:mousedown="
-            this.playerWord += 'x';
-            this.fillWord();
-          "
+          v-on:mousedown="this.addLetter($event)"
           id="xkey"
         >
           X
         </button>
         <button
-          v-on:mousedown="
-            this.playerWord += 'c';
-            this.fillWord();
-          "
+          v-on:mousedown="this.addLetter($event)"
           id="ckey"
         >
           C
         </button>
         <button
-          v-on:mousedown="
-            this.playerWord += 'v';
-            this.fillWord();
-          "
+          v-on:mousedown="this.addLetter($event)"
           id="vkey"
         >
           V
         </button>
         <button
-          v-on:mousedown="
-            this.playerWord += 'b';
-            this.fillWord();
-          "
+          v-on:mousedown="this.addLetter($event)"
           id="bkey"
         >
           B
         </button>
         <button
-          v-on:mousedown="
-            this.playerWord += 'n';
-            this.fillWord();
-          "
+          v-on:mousedown="this.addLetter($event)"
           id="nkey"
         >
           N
         </button>
         <button
-          v-on:mousedown="
-            this.playerWord += 'm';
-            this.fillWord();
-          "
+          v-on:mousedown="this.addLetter($event)"
           id="mkey"
         >
           M
@@ -361,6 +276,12 @@ export default {
     this.playerWord = "";
   },
   methods: {
+    addLetter(event){
+      var letter = event.target.id.substring(0,1)
+      this.playerWord += letter
+      this.fillWord();
+      console.log(letter)
+    },
     clearRow() {
       for (var i = 1; i <= 5; i++) {
         var letterId = "" + this.guessCount + i;
