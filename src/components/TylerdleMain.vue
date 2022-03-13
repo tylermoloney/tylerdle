@@ -463,13 +463,14 @@ export default {
   vertical-align: center;
   line-height: 50px;
 }
+
 .keyboardrow {
   display: flex;
   justify-content: center;
 }
 
 button {
-  width: 3rem;
+  width: 2em;
   border-radius: 5px;
   
 }
@@ -535,5 +536,22 @@ p{
   60% {
     transform: translate3d(4px, 0, 0);
   }
+}
+
+@media screen and (max-width: 940px) {
+  .socials{
+  background-color:blueviolet;
+  position: fixed;
+  border-top-left-radius: 20px;
+  bottom: 0;
+  right: 0;
+  width: 150px;
+  height: 75px;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  z-index: -1;
+}
+  
 }
 </style>
