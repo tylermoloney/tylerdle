@@ -41,14 +41,13 @@
       <div class="letter" id="54"></div>
       <div class="letter" id="55"></div>
     </div>
-    <div class="row">
+    <div class="row" id="row6">
       <div class="letter" id="61"></div>
       <div class="letter" id="62"></div>
       <div class="letter" id="63"></div>
       <div class="letter" id="64"></div>
       <div class="letter" id="65"></div>
     </div>
-    <br />
     <div class="keyboard">
       <div class="keyboardrow">
           <button v-on:mousedown="this.addLetter($event)" id="qkey">
@@ -486,6 +485,10 @@ p{
 .row {
   display: flex;
   padding: 2px;
+}
+
+#row6{
+  padding-bottom: 20px;
 }
 #header {
   color: white;
