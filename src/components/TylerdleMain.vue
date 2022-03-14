@@ -1,4 +1,5 @@
 <template>
+<div>
   <div id="board">
     <h1>Tylerdle</h1>
     <p>Guess the word in 6 tries.</p> 
@@ -48,7 +49,8 @@
       <div class="letter" id="64"></div>
       <div class="letter" id="65"></div>
     </div>
-    <div class="keyboard">
+  </div>
+  <div class="keyboard">
       <div class="keyboardrow">
           <button v-on:mousedown="this.addLetter($event)" id="qkey">
           Q
@@ -466,15 +468,19 @@ export default {
 .keyboardrow {
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 button {
   width: 2em;
+  height: 58px;
   border-radius: 5px;
+  cursor: pointer;
   
 }
 p{
   font-size: 1rem;
+  color: white;
 }
 
 #backspacekey,
@@ -550,11 +556,12 @@ p{
   bottom: 0;
   right: 0;
   width: 150px;
-  height: 75px;
+  height: 50px;
   display:flex;
   flex-wrap: wrap;
   justify-content: center;
-  z-index: -1;
+  
+  
 }
   
 }
