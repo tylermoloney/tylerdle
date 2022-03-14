@@ -552,11 +552,12 @@ p{
   .socials{
   background-color:blueviolet;
   position: fixed;
-  border-top-left-radius: 20px;
-  bottom: 0;
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 0;
+  top: 0;
   right: 0;
   width: 150px;
-  height: 50px;
+  height: 75px;
   display:flex;
   flex-wrap: wrap;
   justify-content: center;
