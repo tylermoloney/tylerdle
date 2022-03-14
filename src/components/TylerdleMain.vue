@@ -485,6 +485,7 @@ p{
 }
 .row {
   display: flex;
+  padding: 2px;
 }
 #header {
   color: white;
